@@ -64,11 +64,12 @@ Atik-main/
 
 ---
 
-## 👩‍💻 Geliştirici
+## 👩‍💻 Geliştiriciler
 
-> **Büşra Mina AL**
+> **Büşra Mina AL**  > www.linkedin.com/in/bmi̇nal60135806
+
 > Ve GreenCode ekibi
-> www.linkedin.com/in/bmi̇nal60135806
+
 
 ---
 
