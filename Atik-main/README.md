@@ -3,7 +3,7 @@
 Bu sistem, üretici ve alıcı firmalar arasında **endüstriyel simbiyoz** odaklı atık takasını kolaylaştırmak için geliştirilmiş **yapay zekâ destekli bir öneri sistemidir.**
 
 ---
-
+(Versiyon 1.0 temel mimari proje dosyası)
 ## 🚀 Öne Çıkan Özellikler
 
 - ✅ Atık & NACE kodu girişli kullanıcı arayüzü
