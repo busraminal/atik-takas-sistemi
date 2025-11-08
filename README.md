@@ -1,78 +1,104 @@
 # ♻️ Atık Takas Sistemi – Yapay Zekâ Destekli Eşleştirme Platformu
 
-Bu sistem, üretici ve alıcı firmalar arasında **endüstriyel simbiyoz** odaklı atık takasını kolaylaştırmak için geliştirilmiş **yapay zekâ destekli bir öneri sistemidir.**
+**Atık Takas Sistemi**, üretici ve alıcı firmalar arasında endüstriyel simbiyoz yoluyla **atıkların yeniden kullanımını** optimize eden, **çok kriterli karar destek ve yapay zekâ tabanlı eşleştirme** altyapısına sahip bir platformdur.
+
+> Sürdürülebilir üretim için: Atık, artık atık değil; **yeni bir kaynaktır.**
 
 ---
-(Versiyon 1.0 temel mimari proje dosyası)
+
 ## 🚀 Öne Çıkan Özellikler
 
-- ✅ Atık & NACE kodu girişli kullanıcı arayüzü
-- ✅ YSA (Yapay Sinir Ağı), XGBoost, ANFIS modelleriyle firma önerisi
-- ✅ OpenRouteService API ile coğrafi mesafe entegrasyonu
-- ✅ PF-AHP + TOPSIS ile çok kriterli karar analizi
-- ✅ Kullanıcı girdisine göre özelleşmiş eşleşme
-- ✅ Excel'e kayıt ve öneri geçmişi yönetimi
+- ✅ Atık & NACE kodu giriş arayüzü
+- ✅ YSA (ANN), XGBoost ve **ANFIS** tabanlı firma öneri sistemi
+- ✅ **PF-AHP + TOPSIS** ile çok kriterli karar analizi
+- ✅ **OpenRouteService API** ile coğrafi mesafe hesaplama
+- ✅ Kullanıcı girdilerine göre dinamik eşleşme önerileri
+- ✅ Öneri sonuçlarını **Excel’e kaydetme & geçmiş yönetimi**
 
 ---
 
 ## 🔧 Kullanılan Teknolojiler
 
-- Python
-- Flask
-- XGBoost / ANFIS / YSA (Keras / Tensorflow)
-- OpenPyXL, Pandas, Numpy
-- HTML, Bootstrap (arayüz)
-- OpenRouteService (API)
+| Bileşen | Açıklama |
+|--------|---------|
+| Python | İş mantığı ve veri işleme |
+| Flask | Web arayüzü ve routing |
+| XGBoost / ANFIS / YSA | Firma öneri modelleri |
+| Pandas / Numpy / OpenPyXL | Veri işleme ve Excel yönetimi |
+| OpenRouteService API | Coğrafi mesafe değerlendirme |
+| TOPSIS + PF-AHP | Çok kriterli karar desteği |
+| HTML + Bootstrap | Ön yüz tasarımı |
 
 ---
 
-## 🧠 Karar Kriterleri
+## 🧠 Karar Kriterleri (TOPSIS Girdileri)
 
-- Karbon ayak izi
+- Karbon ayak izi etkisi
 - Lojistik uygunluk
-- Süreklilik
-- Güven
-- Kapasite
-- Finansal uygunluk
+- Tedarik sürekliliği
+- Kurumsal güven
+- Kapasite yeterliliği
+- Finansal maliyet-etkinlik oranı
 
 ---
 
 ## 🧪 Uygulama Akışı
 
-1. Firma giriş ekranı: atık kodu + sektör bilgisi girilir
-2. Üretim tahmini modülü çalışır
-3. Kriterler alınır ve TOPSIS uygulanır
-4. Uygun firmalar önerilir
-5. Sonuçlar Excel’e kaydedilir
+1. Firma atık kodu & sektör bilgisi girer
+2. Sistem uygun dönüşüm/yeniden kullanım eşlerini filtreler
+3. Yapay zekâ modelleri benzer firma eşleşmelerini tahmin eder
+4. Çok kriterli analiz uygulanır (PF-AHP → TOPSIS)
+5. Uygun firmalar **puanlanmış öneri listesi** olarak kullanıcıya sunulur
+6. Sonuçlar Excel’e kaydedilir ve geçmişe işlenir
 
 ---
 
-## 📂 Proje Yapısı
+## 📂 Proje Dosya Yapısı
 
+```
 Atik-main/
-├── app.py
-├── tavsiye.py
+│
+├── app.py                       # Flask ana sunucu
+├── tavsiye.py                   # Model + TOPSIS + öneri iş mantığı
+│
 ├── templates/
-│ └── index.html, giris.html, sonuc.html
+│   ├── index.html               # Giriş
+│   ├── giris.html               # Firma bilgi ekranı
+│   └── sonuc.html               # Öneri çıktıları
+│
 ├── static/
-│ └── style.css
+│   └── style.css                # Arayüz stilleri
+│
 ├── veriler/
-│ └── guncellenmis_waste_detect.csv
-├── modeller/
-│ └── ysa_model.h5, label_encoder.pkl, anfis_model.npz
-
+│   └── guncellenmis_waste_detect.csv   # Atık-tür veri tabanı
+│
+└── modeller/
+    ├── ysa_model.h5             # Yapay Sinir Ağı modeli
+    ├── anfis_model.npz          # ANFIS modeli parametreleri
+    └── label_encoder.pkl        # Kategorik kod çözücü
+```
 
 ---
 
 ## 👩‍💻 Geliştiriciler
 
-> **Büşra Mina AL**  > www.linkedin.com/in/bmi̇nal60135806
+**Büşra Mina AL**  
+Yapay Zekâ & Endüstri Mühendisi  
+LinkedIn: https://www.linkedin.com/in/bmi̇nal60135806
 
-> Ve GreenCode ekibi
-
+**GreenCode Ekibi**
 
 ---
 
 ## 📜 Lisans
 
-Bu proje özel lisanslıdır. Kullanım, dağıtım veya ticari amaçlı çoğaltım için geliştirici izni gereklidir
+```
+Bu proje özel lisanslıdır.
+İzin alınmaksızın:
+- Kopyalanamaz
+- Dağıtılamaz
+- Ticari amaçla kullanılamaz
+- Türetilmiş versiyonları oluşturulamaz
+
+İhlaller hukuki takibe tabidir.
+```
