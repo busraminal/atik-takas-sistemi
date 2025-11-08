@@ -86,7 +86,7 @@ Atik-main/
 Yapay Zekâ & Endüstri Mühendisi  
 LinkedIn: https://www.linkedin.com/in/bmi̇nal60135806
 
-**GreenCode Ekibi**
+**Ve GreenCode Ekibi**
 
 ---
 
